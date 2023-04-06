@@ -14,10 +14,10 @@ resource "newrelic_nrql_alert_condition" "foo" {
   slide_by                     = each.value.slide_by
 
   # baseline type only
-  baseline_direction = each.vaue.baseline_direction
+  baseline_direction = each.value.baseline_direction
 
   nrql {
-    Nrql=each.value.query
+    query=each.value.query
     # query = "SELECT percentile(duration, 95) FROM Transaction WHERE appName = 'FoodMe'"
   }
 
